@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="1_files/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        .top {
+            padding-top: 6vw;
+            margin: 4vw auto;
+            margin-bottom: 5vw;
+            width: 90vw;
+            height: 45vw;
+            border-radius: 2vw;
+            background: -webkit-linear-gradient(#4E8BF5, #5291F5);
+        }
+
+        span {
+            display: block;
+            color: #F4F8FE;
+            margin-left: 4vw;
+        }
+
+        .s1 {
+            font-size: 5vw;
+            margin-bottom: 4vw;
+        }
+
+        .s2 {
+            font-size: 4vw;
+            margin-bottom: 7vw;
+        }
+
+        .tubiao {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .s3 {
+            font-size: 4vw;
+            margin-left: 1vw;
+            margin-bottom: 5vw;
+        }
+
+        .iconfont1 {
+            font-size: 4vw;
+            margin-top: 0.5vw;
+        }
+
+        .iconfont2 {
+            font-size: 4vw;
+            margin-top: 0.5vw;
+        }
+
+        .s4 {
+            font-size: 4vw;
+            margin-left: 1vw;
+            margin-bottom: 5vw;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 5vw;
+            width: 90vw;
+            height: 113vw;
+            border-radius: 2vw;
+            box-shadow: 0 10px 10px rgba(0, 0, 255, 0.1);
+
+        }
+
+        h1 {
+
+            margin-top: 5vw;
+            font-size: 10vw;
+            font-weight: normal;
+            color: #DB4E2B;
+        }
+
+        h2 {
+            /* ========================== */
+            border: 0.3vw solid #ECEDEF;
+            border-radius: 4vw;
+            height: 8vw;
+            width: 30vw;
+            text-align: center;
+            line-height: 8vw;
+
+            font-weight: 400;
+            font-size: 8vw;
+            margin-top: 4vw;
+        }
+
+        .iconfont3 {
+            color: #75F654;
+            margin-top: 10vw;
+            font-size: 36vw;
+            margin-left: 0px;
+        }
+
+        h3 {
+            font-size: 5vw;
+            color: #4172F4;
+            margin-top: 10vw;
+        }
+
+        .bottom {
+            width: 90vw;
+            margin: 0 auto;
+            border: 1px solid #C5C9D7;
+            margin-bottom: 3vw;
+        }
+
+        h4 {
+            padding: 0 2.5vw;
+            background-color: #fff;
+            z-index: 999;
+            color: #C5C9D7;
+            font-weight: normal;
+            font-size: 2.6vw;
+            position: absolute;
+            left: 40vw;
+            bottom: -1.4vw;
+        }
+
+        .zong {
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zong">
+        <div class="top">
+		    <div>
+			    <img src="头像.jpg" width="100" align="right">
+			</div>
+            <span class="s1">江宁校区</span>
+            <span class="s2">研究生请假进出校</span>
+			
+            <div class="tubiao">
+                <span class="iconfont iconfont1"></span>
+                <span>朱建华</span>
+            </div>
+			
+            <div class="tubiao">
+                <span class="iconfont iconfont2"></span>
+                <span class="s4">基础医学院</span>
+            </div>
+        </div>
+
+        <div class="middle">
+            <h1 id="date">9月12日</h1>
+            <h2 id="time">18:54</h2>
+            <span class="iconfont iconfont3"></span>
+            <h3>进校验证通过</h3>
+        </div>
+        <div class="bottom">
+        </div>
+        <h4>南京医科大学</h4>
+    </div>
+    <script>
+        let date = document.querySelector('#date')
+        let time = document.querySelector('#time')
+        let topclick = document.querySelector('.top')
+        let _name = document.querySelector('.s3')
+        var thedate = new Date();
+        let month = thedate.getMonth() + 1
+        let ri = thedate.getDate()
+        datedemo = month + '月' + ri + '日'
+        date.innerHTML = datedemo  //显示日期
+        let timedome =
+            thedate.getHours() + ':' + (thedate.getMinutes() > 9 ? thedate.getMinutes() : '0' + thedate.getMinutes())
+        time.innerHTML = timedome //显示时分
+        //加人名
+        let str = `建华,建`
+        let newArr = str.split(',')
+        let xingstr = `朱,王`
+        xingnewArr = xingstr.split(',')
+        topclick.addEventListener('click', function () {
+            _name.innerHTML = xingnewArr[Math.floor(Math.random() * 34)] + newArr[Math.floor(Math.random() * 140)]
+        })
+    </script>
+
+
+</body></html>
